@@ -10,7 +10,10 @@ margin-right: 5px;
 border-radius: 2px;
 `
 
-const StyledTextButton = styled.Button`
+const StyledTextButton = styled.Button.attrs({
+  title: props => props.ttl,
+  onPress: props => props.onPressed
+})`
 width: 30%;
 margin-left: 5px;
 `
@@ -49,7 +52,7 @@ class PlaceForm extends Component {
           onChangeText={this.onChange}
           placeholder="An awesome place"
         />
-        <StyledTextButton title="Add" onPress={this.onPressButton}/>
+        <StyledTextButton ttl="Add" onPressed={this.onPressButton}/>
       </InputContainer>
     );
   }
