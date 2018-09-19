@@ -23,6 +23,10 @@ class ListContainer extends Component {
     )
   }
 
+  componentWillUnmount() {
+    console.log('ListContainer unmounted')
+  }
+
   render() {
     const {places} = this.props
     return (

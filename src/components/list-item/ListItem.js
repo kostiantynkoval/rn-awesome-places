@@ -14,7 +14,7 @@ align-items: center;
 `
 
 const StyledImage = styled.Image.attrs({
-  source: props => props.src
+  source: props => props.source
 })`
 margin-right: 8px;
 width: 30px;
@@ -36,7 +36,7 @@ const ListItem = ({place, onItemPressed}) => {
   return (
     <StyledTouchable pressed={() => onItemPressed(place)}>
       <ListItemContainer>
-        <StyledImage src={place.image} />
+        <StyledImage source={place.image} />
         <StyledText>{place.placeName}</StyledText>
       </ListItemContainer>
     </StyledTouchable>

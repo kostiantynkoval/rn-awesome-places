@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const StyledTextInput = styled.TextInput`
@@ -42,6 +42,10 @@ class PlaceForm extends Component {
     }
     this.props.onPlaceAdd(this.state.placeName)
     this.setState({placeName: ''})
+  }
+
+  componentWillUnmount() {
+    console.log('PlaceForm unmounted')
   }
 
   render() {
