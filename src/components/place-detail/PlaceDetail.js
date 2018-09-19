@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
+import { TouchableOpacity } from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const StyledModal = styled.Modal.attrs({
   onRequestClose: props => props.onClose,
@@ -38,8 +40,10 @@ const StyledButton = styled.Button.attrs({
   title: props => props.title,
   onPress: props => props.onPress,
   color: props => props.textColor ? props.textColor : 'navy'
-})`
-margin-bottom: 8px;
+})``
+
+const IconButton = styled.View`
+align-items: center;
 `
 
 const PlaceDetail = ({place, requestClose, requestDelete}) => (
@@ -48,7 +52,11 @@ const PlaceDetail = ({place, requestClose, requestDelete}) => (
       { place !== null &&  <StyledImage source={place.image}/> }
       { place !== null &&  <StyledText>{place.placeName}</StyledText> }
       <ButtonView>
-        <StyledButton title="Delete" textColor="red" onPress={requestDelete}/>
+        <TouchableOpacity onPress={requestDelete}>
+          <IconButton>
+            <Icon size={30} name="ios-trash" color="red"/>
+          </IconButton>
+        </TouchableOpacity>
         <StyledButton title="Close" onPress={requestClose}/>
       </ButtonView>
     </StyledView>

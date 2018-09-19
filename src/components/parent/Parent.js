@@ -10,7 +10,7 @@ const StyledView = styled.View`
 flex: 1;
 justify-content: flex-start;
 align-items: center;
-background: #9cf;
+background: #6bf;
 padding-left: 5%;
 padding-right: 5%;
 `
@@ -40,7 +40,6 @@ class Parent extends React.Component {
   render() {
     return (
       <StyledView>
-        { console.log('Parent props', this.props)}
         <PlaceDetail place={this.props.selectedPlace} requestClose={this.onClose} requestDelete={this.onDelete}/>
         <PlaceForm onPlaceAdd={this.onPlaceAdd} />
         {
